@@ -12,10 +12,10 @@
 
             <main>
                 <TheWelcome />
-                <Filters :filters="filters" @apply="applyFilters" /> <!-- Добавлен компонент фильтров -->
-                <div v-if="characters.length === 0">No characters found.</div> <!-- Добавлено сообщение, если нет персонажей -->
-                <CharacterCard v-for="character in characters" :key="character.id" :character="character" /> <!-- Добавлен цикл для отображения персонажей -->
-                <Pagination :currentPage="currentPage" :totalPages="totalPages" @change="changePage" /> <!-- Добавлен компонент пагинации -->
+                <Filters :filters="filters" @apply="applyFilters" />
+                <div v-if="characters.length === 0">No characters found.</div> 
+                <CharacterCard v-for="character in characters" :key="character.id" :character="character" /> 
+                <Pagination :currentPage="currentPage" :totalPages="totalPages" @change="changePage" /> 
             </main>
         </div>
     </div>
@@ -25,8 +25,6 @@
     import { ref, reactive, onMounted } from 'vue';
     import axios from 'axios';
 
-    import HelloWorld from './components/HelloWorld.vue'
-    import TheWelcome from './components/TheWelcome.vue'
     import CharacterCard from './components/CharacterCard.vue';
     import Pagination from './components/Pagination.vue';
     import Filters from './components/Filters.vue';
